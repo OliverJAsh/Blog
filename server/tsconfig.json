@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "sourceMap": true,
+
+        "allowJs": true,
+        "outDir": "./target",
+        "lib": [
+            "dom",
+            "es2015"
+        ]
+    },
+    "files": [
+        "./manual-typings/main.d.ts",
+        "./src/index.ts"
+    ]
+}

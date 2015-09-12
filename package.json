@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "engines": {
+    "node": "8.11.2"
+  },
+  "scripts": {
+    "prestart": "npm run compile",
+    "start": "npm run runServer",
+    "compile": "npm run clean && npm run compileClient && npm run compileServerTs && cp -r server/src/posts server/target",
+    "clean": "rm -rf generated && rm -rf server/target && rm -rf client/target && mkdir -p generated",
+    "compileClient": "webpack && cp -r client/src/images generated && cp ./node_modules/prismjs/themes/prism.css ./generated/prism-theme.css",
+    "compileClientTs": "tsc --project client",
+    "compileServerTs": "tsc --project server",
+    "runServer": "node server/target/index.js >> log.txt"
+  },
+  "dependencies": {
+    "@types/denodeify": "^1.2.30",
+    "@types/lodash": "^4.14.62",
+    "@types/node": "^7.0.12",
+    "@types/prismjs": "^1.6.1",
+    "@types/virtual-dom": "^2.0.27",
+    "dateformat": "https://registry.npmjs.org/dateformat/-/dateformat-1.0.12.tgz",
+    "denodeify": "^1.2.1",
+    "loadcss": "^0.0.2",
+    "lodash": "^4.7.0",
+    "prismjs": "^1.6.0",
+    "slug": "^0.9.1",
+    "ts-loader": "^2.0.3",
+    "typescript": "2.2.2",
+    "uglifyjs-webpack-plugin": "^0.4.3",
+    "vdom-to-html": "^2.1.1",
+    "virtual-dom": "^2.1.1",
+    "webpack": "^2.3.3"
+  },
+  "devDependencies": {}
+}
